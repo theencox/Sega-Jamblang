@@ -16,8 +16,13 @@
 
 package com.example.android.droidcafeinput;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,6 +41,13 @@ import android.widget.Toast;
  */
 public class OrderActivity extends AppCompatActivity
         implements AdapterView.OnItemSelectedListener{
+
+    private static final String PRIMARY_CHANNEL_ID = "primary_notification_channel";
+
+    private static final int NOTIFICATION_ID = 0;
+
+
+    private NotificationManager mNotificationManager;
 
     /**
      * Sets the content view to activity_order, and gets the intent and its
@@ -120,6 +132,7 @@ public class OrderActivity extends AppCompatActivity
                     hps.requestFocus();
                 }
                 else {
+                    sendNotification();
                     Intent intent1 = new Intent(OrderActivity.this,HasilActivity.class);
                     intent1.putExtra("nama", snama);
                     intent1.putExtra("alamat", salamat);
@@ -136,6 +149,8 @@ public class OrderActivity extends AppCompatActivity
 
         textView.setText(message);
         dharga.setText("Harga : " + harga.toString());
+
+        createNotificationChannel();
 
 
     }
@@ -164,5 +179,49 @@ public class OrderActivity extends AppCompatActivity
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
         // Do nothing.
+
+    }
+
+    //fungsi untuk mengirim notifikasi
+    public void sendNotification() {
+        NotificationCompat.Builder notifyBuilder = getNotificationBuilder();
+        mNotificationManager.notify(NOTIFICATION_ID, notifyBuilder.build());
+    }
+
+    //fungsi untuk membuat notifikasi
+    public void createNotificationChannel()
+    {
+        mNotificationManager = (NotificationManager)
+                getSystemService(NOTIFICATION_SERVICE);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            // Create a NotificationChannel
+            NotificationChannel notificationChannel = new NotificationChannel(PRIMARY_CHANNEL_ID,
+                    "Mascot Notification", NotificationManager
+                    .IMPORTANCE_HIGH);
+
+            notificationChannel.enableLights(true);
+            notificationChannel.setLightColor(Color.RED);
+            notificationChannel.enableVibration(true);
+            notificationChannel.setDescription("Notification from Mascot");
+            mNotificationManager.createNotificationChannel(notificationChannel);
+        }
+    }
+
+
+    //fungsi untuk mengambil data notifikasi
+    private NotificationCompat.Builder getNotificationBuilder(){
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        PendingIntent notificationPendingIntent = PendingIntent.getActivity(this,
+                NOTIFICATION_ID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(this, PRIMARY_CHANNEL_ID)
+                .setContentTitle("Sega Jamblang")
+                .setContentText("Pesanan Berhasil Dibuat.")
+                .setContentIntent(notificationPendingIntent)
+                .setAutoCancel(true)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
+                .setSmallIcon(R.drawable.ic_android);
+        return notifyBuilder;
     }
 }
