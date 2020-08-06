@@ -1,0 +1,60 @@
+<!--
+  ~ Copyright (C) 2018 Google Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">Sega Jamblang</string>
+    <string name="topi">Anda Pesan Dadar</string>
+    <string name="jersey">Anda Pesan Dengdeng</string>
+    <string name="sepatu">Anda Pesan Sambal Goreng</string>
+
+    <string name="action_contact">Kontak</string>
+    <string name="action_order">Order</string>
+    <string name="action_favorites">Favorites</string>
+    <string name="action_status">Status</string>
+
+    <string name="action_order_massage">Anda Memilih Order</string>
+    <string name="action_status_massage">Anda Memilih Status</string>
+    <string name="action_favorites_massage">Anda Memilih Favorites</string>
+    <string name="action_contact_massage">Anda Memilih Kontak</string>
+
+    <string name="change_dessert">Change Order</string>
+    <string name="order_label_text">Order:</string>
+    <string name="note_label_text">Note:</string>
+    <string name="name_label_text">Name</string>
+    <string name="enter_name_hint">Enter your name</string>
+    <string name="address_label_text">Address</string>
+    <string name="enter_address_hint">Enter address</string>
+    <string name="phone_label_string">Phone</string>
+    <string name="enter_phone_hint">Enter phone</string>
+    <string name="enter_note_hint">Enter note</string>
+    <string name="choose_delivery_method">Choose a delivery method:</string>
+    <string name="same_day_messenger_service">Same day messenger
+        service</string>
+    <string name="next_day_ground_delivery">Next day ground delivery</string>
+    <string name="pick_up">Pick up</string>
+    <string name="Topi">topi</string>
+    <string name="Jersey">Jersey</string>
+    <string name="Sepatu">Sepatu</string>
+    <string name="cap">Topi</string>
+    <string name="seragam">seragam</string>
+    <string name="shoes">shoes</string>
+    <string name="Cap">cap</string>
+    <string name="ceplok">Ceplok</string>
+    <string name="dengdeng">Dengdeng</string>
+    <string name="sambal_goreng">Sambal Goreng</string>
+
+
+</resources>

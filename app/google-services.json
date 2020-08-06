@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "505003667968",
+    "firebase_url": "https://sega-jamblang.firebaseio.com",
+    "project_id": "sega-jamblang",
+    "storage_bucket": "sega-jamblang.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505003667968:android:31884be2838c8f63bd5ee5",
+        "android_client_info": {
+          "package_name": "com.example.android.droidcafeinput"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "505003667968-mtu7i0806gh2ovc20q9p25drduuuihim.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.droidcafeinput",
+            "certificate_hash": "35da0a915907d93f419bfaf5a947a3c6fdfeb066"
+          }
+        },
+        {
+          "client_id": "505003667968-ht0q7qr5k2jeihg7m924pi809iffqctm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyaExIq9MD0wp0tXun-WGCpm_mm1yjmf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "505003667968-ht0q7qr5k2jeihg7m924pi809iffqctm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
